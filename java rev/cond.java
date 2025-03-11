@@ -37,7 +37,19 @@ public class cond {
         // }else{
         //     System.out.println("you are adult you have to pay tax");
         // }
-        
+        int income=sc.nextInt();
+        double tax;
+        if (income<500000){
+            System.out.println("you have to pay no tax");
+        }
+        else if (income>500000 && income<100000){
+            tax=(income-500000)*0.12;
+            System.out.println(tax);
+        }
+        else{
+            tax=(500000)*0.12+(income-1000000)*0.20;
+            System.out.println(tax);
+        }
 
     }
 }
