@@ -8,11 +8,12 @@ public class reversenum {
         while(n>0){
 
         num=n%10;
-        System.out.print(num);
+        
 
+        
+        a=(a*10)+num;
         n=n/10;
-        // a=a+num*10;
         }
-        System.out.println();
+        System.out.println(a);
     }
 }
