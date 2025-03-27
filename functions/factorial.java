@@ -10,7 +10,9 @@ public class factorial {
     }
 
     public static void main(String[] args) {
-        int val=fact(5);
-        System.out.println(val);
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int val=fact(a);
+        System.out.println("the value of the factorial is : "+val);
     }
 }
