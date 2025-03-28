@@ -15,6 +15,6 @@ public class binartodeci {
     }
 
     public static void main(String[] args) {
-        convertbintodeci(1001);  // Corrected method call
+        convertbintodeci(11101);  // Corrected method call
     }
 }
