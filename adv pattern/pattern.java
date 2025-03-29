@@ -44,6 +44,7 @@ public class pattern {
     public static void main(String[] args) {
         // hollowrectang(5, 6);
         inv_pyramid(4, 4);
+        cut_pyramid(4, 4);
 
     }
 }
