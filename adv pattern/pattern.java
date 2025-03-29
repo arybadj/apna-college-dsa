@@ -30,6 +30,7 @@ public class pattern {
 
     }
     public static void cut_pyramid(int row,int colu){
+
         for(int i=1;i<=row;i++){
             for(int j=1;j<=row-i;j++){
                 System.out.print("");
@@ -41,10 +42,22 @@ public class pattern {
         }
 
     }
+    public static void rotated_half_pyramid(int n){
+        // int a=n;
+        for(int i=0;i<n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(j);
+                // a++;
+            }
+            System.out.println();
+        }
+
+    }
     public static void main(String[] args) {
         // hollowrectang(5, 6);
-        inv_pyramid(4, 4);
-        cut_pyramid(4, 4);
+        // inv_pyramid(12, 16);
+        // cut_pyramid(4, 4);
+        rotated_half_pyramid(4);
 
     }
 }
