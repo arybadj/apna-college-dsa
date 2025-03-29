@@ -42,7 +42,7 @@ public class pattern {
         }
 
     }
-    public static void rotated_half_pyramid(int n){
+    public static void num_half_pyramid(int n){
         // int a=n;
         for(int i=0;i<n;i++){
             for(int j=1;j<=n-i;j++){
@@ -53,11 +53,21 @@ public class pattern {
         }
 
     }
+    public static void numpyra(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+    }
     public static void main(String[] args) {
         // hollowrectang(5, 6);
         // inv_pyramid(12, 16);
         // cut_pyramid(4, 4);
-        rotated_half_pyramid(4);
+        // num_half_pyramid(4);
+        numpyra(5);
 
     }
 }
