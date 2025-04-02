@@ -11,6 +11,10 @@ public class array_intro {
         arr1[0]=sc.nextInt();
         arr1[1]=sc.nextInt();
         System.out.println("hey "+arr1[0]+" this is my time "+arr1[1]);
+        arr1[1]=arr1[1]+51;
+        System.out.println("hey "+arr1[0]+" this is my time "+arr1[1]);
+        System.out.println("length of array "+ arr1.length);
+
         
     }
 }
