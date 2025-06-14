@@ -8,8 +8,8 @@ public class subarray {
                 int end=j;
                 for(int q=start;q<=end;q++){
                     System.out.print(array[q]+",");
-                    ts++;
-                }System.out.println();
+                    
+                }ts++;System.out.println();
             }System.out.println();
         }
         System.out.println("total subarrays are "+ts);
