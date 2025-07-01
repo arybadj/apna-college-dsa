@@ -11,6 +11,7 @@ public class substrings {
 
     public static void main(String[] args) {
         String a="Aryash";
+        System.out.println(a.substring(0, 3));
         sub(a, 0, 3);
         
     }
