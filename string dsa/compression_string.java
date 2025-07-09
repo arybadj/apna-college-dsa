@@ -12,7 +12,7 @@ public class compression_string {
             }
             newstr+=str.charAt(i);
             if(count>1){
-                newstr+=count;
+                newstr+=count.toString();
             }
 
             
