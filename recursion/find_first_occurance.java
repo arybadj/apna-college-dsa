@@ -13,8 +13,8 @@ public class find_first_occurance {
     }
 
     public static void main(String[] args) {
-        int arr[]={1,5,9,2,10,55,6};
-        System.out.println(occur(arr, 0, 505));
+        int arr[]={1,5,9,2,10,55,6,55};
+        System.out.println(occur(arr, 0, 55));
         
     }
 }
