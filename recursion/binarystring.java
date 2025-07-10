@@ -7,9 +7,9 @@ public class binarystring {
             return;
         }
         
-        fill(n-1, 0, str+("0"));
-        if(last_place==1){
-            fill(n-1, last_place, str+("1"));
+        fill(n-1, 0, str+"0");
+        if(last_place==0){
+            fill(n-1, last_place, str+"1");
         }
         
     }
