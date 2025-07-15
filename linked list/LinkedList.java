@@ -67,6 +67,7 @@ public class LinkedList {
         ll.addfirst(2);
         ll.print();
         ll.addlast(5);
+        ll.addlast(55);
         ll.print();
         
     }
