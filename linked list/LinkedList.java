@@ -31,7 +31,7 @@ public class LinkedList {
         head=newnode;
     }
     // adding tail
-    public void addlast(int data){
+    public void addlast(int data){// 0(1)
         // step 1 create a node
         node newnode=new node(data);
         if(head==null){// by deafult we always consider a ll be empty if the head is null
@@ -45,10 +45,29 @@ public class LinkedList {
         // // step4 assigning tail node to null
         // tail.next=null; this is for understanding that this will happen automatically
     }
+    // print linked list
+    public void print(){ //0(n)
+        // if(head==null){
+        //     System.out.println("ll is empty");
+        //     return;
+        // }
+        node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+" --> ");
+            temp=temp.next;
+        }
+        System.out.println("null");
+
+    }
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
+        ll.print();
         ll.addfirst(1);
+        ll.print();
         ll.addfirst(2);
+        ll.print();
         ll.addlast(5);
+        ll.print();
+        
     }
 }
