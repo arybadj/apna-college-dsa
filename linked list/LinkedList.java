@@ -59,6 +59,20 @@ public class LinkedList {
         System.out.println("null");
 
     }
+    public void adding_at(int indx,int data){
+        node newnode=new node(data);
+        int i=0;
+        node temp=head;
+        while(indx-1>i){
+            temp=temp.next;
+            i++;
+
+        }
+        // i =index-1 iska mtlb temp is previous
+        newnode.next=temp.next;// as we know that prev was storing index value of next so we will copy that value to news next
+        temp.next=newnode;
+
+    }
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         ll.print();
@@ -69,6 +83,7 @@ public class LinkedList {
         ll.addlast(5);
         ll.addlast(55);
         ll.print();
-        
+        ll.adding_at(3, 10);
+        ll.print();
     }
 }
