@@ -74,8 +74,12 @@ public class LinkedList {
         // i =index-1 iska mtlb temp is previous
         newnode.next=temp.next;// as we know that prev was storing index value of next so we will copy that value to news next
         temp.next=newnode;
-
-
+    }
+    public int remove_start(){
+        int value=head.data;
+        head=head.next;
+        size--;
+        return value;
     }
 
 
@@ -89,6 +93,7 @@ public class LinkedList {
     //     }
     //     System.out.println("size of linked list : "+i);
     // }
+
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         ll.print();
@@ -102,6 +107,8 @@ public class LinkedList {
         ll.adding_at(3, 10);
         ll.print();
         // ll.find_size(); till will taking 0(n) tc
+        ll.remove_start();
+        ll.print();
         System.out.println("the size of the linked list is : "+ll.size);// this is running in constant time 
     }
 }
