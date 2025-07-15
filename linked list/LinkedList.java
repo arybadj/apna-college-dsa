@@ -13,7 +13,7 @@ public class LinkedList {
     public static node tail;
     // now we will create methods to perform operations in linkeed list
 
-
+// adding head
     public void addfirst(int data){
 
         // step 1 craete node 
@@ -30,6 +30,7 @@ public class LinkedList {
         // step 3 head=newnode
         head=newnode;
     }
+    // adding tail
     public void addlast(int data){
         // step 1 create a node
         node newnode=new node(data);
