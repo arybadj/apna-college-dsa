@@ -101,7 +101,7 @@ public class LinkedList {
         ll.print();
         ll.adding_at(3, 10);
         ll.print();
-        // ll.find_size();
-        System.out.println("the size of the linked list is : "+ll.size);
+        // ll.find_size(); till will taking 0(n) tc
+        System.out.println("the size of the linked list is : "+ll.size);// this is running in constant time 
     }
 }
