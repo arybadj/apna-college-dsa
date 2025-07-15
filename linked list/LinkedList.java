@@ -116,33 +116,38 @@ public class LinkedList {
 
 
 
-    // to find the size in a ll
-    // public void find_size(){
-    //     int i=0;
-    //     node temp=head;
-    //     while(temp!=null){
-    //         temp=temp.next;
-    //         i++;
-    //     }
-    //     System.out.println("size of linked list : "+i);
-    // }
+    public int search_iterative(int key){
+        node temp=head;
+        int i=0;
+        while(temp!=null){
+            if(temp.data==key){
+                return i;
+            }
+            temp=temp.next;
+            i++;
+        }
+        
+
+        return -1;
+    }
 
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
-        ll.print();
+        // ll.print();
         ll.addfirst(1);
-        ll.print();
+        // ll.print();
         ll.addfirst(2);
-        ll.print();
+        // ll.print();
         ll.addlast(5);
         ll.addlast(55);
-        ll.print();
+        // ll.print();
         ll.adding_at(3, 10);
         ll.print();
         // ll.find_size(); till will taking 0(n) tc
-        ll.remove_start();
-        ll.remove_end();
-        ll.print();
+        // ll.remove_start();
+        // ll.remove_end();
+        // ll.print();
+        System.out.println(ll.search_iterative(55));
         System.out.println("the size of the linked list is : "+ll.size);// this is running in constant time 
     }
 }
