@@ -76,11 +76,44 @@ public class LinkedList {
         temp.next=newnode;
     }
     public int remove_start(){
+        if(size==0){
+            System.out.println("ll is empty");
+            return Integer.MIN_VALUE;
+        }else if(size==1){
+            int val=head.data;
+            head=tail=null;
+            size=0;
+            return val;
+        }
+
         int value=head.data;
         head=head.next;
         size--;
         return value;
     }
+    // Remove from end
+    public int remove_end() {
+        if (size == 0) {
+            System.out.println("ll is empty");
+            return Integer.MIN_VALUE;
+        } else if (size == 1) {
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        node prev = head;
+        for (int i = 0; i < size - 2; i++) {
+            prev = prev.next;
+        }
+        int value = tail.data;
+        prev.next = null;
+        tail = prev;
+        size--;
+        return value;
+    }
+
+
 
 
     // to find the size in a ll
@@ -108,6 +141,7 @@ public class LinkedList {
         ll.print();
         // ll.find_size(); till will taking 0(n) tc
         ll.remove_start();
+        ll.remove_end();
         ll.print();
         System.out.println("the size of the linked list is : "+ll.size);// this is running in constant time 
     }
