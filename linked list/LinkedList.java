@@ -11,6 +11,7 @@ public class LinkedList {
     }
     public static node head;
     public static node tail;
+    public static int size;
     // now we will create methods to perform operations in linkeed list
 
 // adding head
@@ -18,7 +19,7 @@ public class LinkedList {
 
         // step 1 craete node 
         node newnode=new node(data);
-        
+        size++;
         if(head==null){
             head=tail=newnode;
             return;
@@ -34,6 +35,7 @@ public class LinkedList {
     public void addlast(int data){// 0(1)
         // step 1 create a node
         node newnode=new node(data);
+        size++;
         if(head==null){// by deafult we always consider a ll be empty if the head is null
             tail=head=newnode;
         }
@@ -61,6 +63,7 @@ public class LinkedList {
     }
     public void adding_at(int indx,int data){
         node newnode=new node(data);
+        size++;
         int i=0;
         node temp=head;
         while(indx-1>i){
@@ -72,7 +75,20 @@ public class LinkedList {
         newnode.next=temp.next;// as we know that prev was storing index value of next so we will copy that value to news next
         temp.next=newnode;
 
+
     }
+
+
+    // to find the size in a ll
+    // public void find_size(){
+    //     int i=0;
+    //     node temp=head;
+    //     while(temp!=null){
+    //         temp=temp.next;
+    //         i++;
+    //     }
+    //     System.out.println("size of linked list : "+i);
+    // }
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         ll.print();
@@ -85,5 +101,7 @@ public class LinkedList {
         ll.print();
         ll.adding_at(3, 10);
         ll.print();
+        // ll.find_size();
+        System.out.println("the size of the linked list is : "+ll.size);
     }
 }
