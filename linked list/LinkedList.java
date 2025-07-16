@@ -211,8 +211,21 @@ public class LinkedList {
 
         return true;
 
+    }
+    public boolean iscycle(){
+        node fast=head;
+        node slow=head;
 
 
+        while(fast!=null && fast== null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+                return true;
+
+            }
+        }
+        return false;
     }
 
 
@@ -236,6 +249,7 @@ public class LinkedList {
         // ll.reverse();
         
         ll.print();
+        System.out.println(ll.iscycle());
         System.out.println(ll.palindrone());// this is running in linear time 
     }
 }
