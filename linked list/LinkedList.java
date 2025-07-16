@@ -145,7 +145,34 @@ public class LinkedList {
         }
         head=prev;
     }
+    public void deleteNfrom_end(int n){
+        // calulate size
+        int size=0;
+        node temp=head;
+        while(temp!=null){
+            temp=temp.next;
+            size++;
 
+        }
+        if(n==size){
+            head=head.next;// to remove head
+        }
+        int i=1;
+        node prev=head;
+        while(i<size-n){
+            prev=prev.next;
+            i++;
+        }
+        prev.next=prev.next.next;
+        return;
+        
+
+
+
+
+
+
+    }
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         // ll.print();
