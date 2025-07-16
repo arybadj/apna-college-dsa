@@ -217,7 +217,7 @@ public class LinkedList {
         node slow=head;
 
 
-        while(fast!=null && fast== null){
+        while (fast != null && fast.next != null){
             slow=slow.next;
             fast=fast.next.next;
             if(slow==fast){
@@ -228,28 +228,51 @@ public class LinkedList {
         return false;
     }
 
+    public void remove_cycle(){
+        //detect cycle
+        node slow=head;
+        node fast=head;
+        boolean cycle=false;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+                cycle=true;
+                break;
+            }
+            
+            
+
+
+        }
+        if(cycle==false){
+                return;
+            }
+        // find meeting point
+        slow=head;
+        node prev=null; // last node
+        while(slow!=fast){
+            prev=fast;
+            slow=slow.next;
+            fast=fast.next;
+        }
+        // remove cycle when i will make last.next=null
+        prev.next=null;
+    }
+
 
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
-        // ll.print();
         ll.addfirst(1);
-        // ll.print();
-        ll.addfirst(2);
-        // ll.print();
-        ll.addlast(1);
-        ll.addlast(2);
-        // ll.print();
-        // ll.adding_at(3, 10);
-        ll.print();
-        // ll.find_size(); till will taking 0(n) tc
-        // ll.remove_start();
-        // ll.remove_end();
-        // ll.print();
-        // System.out.println(ll.search_iterative(55));
-        // ll.reverse();
-        
-        ll.print();
-        System.out.println(ll.iscycle());
-        System.out.println(ll.palindrone());// this is running in linear time 
+    ll.addfirst(2);
+    ll.addlast(1);
+    ll.addlast(2);
+
+    ll.print();
+
+    // 🔥 Create a cycle: tail -> second node
+    ll.tail.next = ll.head.next;
+    ll.remove_cycle();
+    System.out.println("Cycle exists? " + ll.iscycle()); // Should print true
     }
 }
