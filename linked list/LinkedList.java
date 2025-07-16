@@ -231,7 +231,7 @@ public class LinkedList {
     public void remove_cycle(){
         //detect cycle
         node slow=head;
-        node fast=head;
+        node fast=head.next;
         boolean cycle=false;
         while(fast!=null && fast.next!=null){
             slow=slow.next;
@@ -261,18 +261,78 @@ public class LinkedList {
     }
 
 
+    public node getmid(node head){
+        node slow=head;
+        node fast=head.next;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+        
+
+    }
+
+    public node merge(node head1,node head2){
+        node mergell=new node(-1);
+        node temp=mergell;
+
+        while(head1!=null && head2!=null){
+            if(head1.data<=head2.data){
+                temp.next=head1;
+                head1=head1.next;
+                temp=temp.next;
+            }else{
+                temp.next=head2;
+                head2=head2.next;
+                temp=temp.next;
+            }
+        }
+        while(head1!=null){
+            temp.next=head1;
+            head1=head1.next;
+            temp=temp.next;
+
+        }
+        while(head2!=null){
+            temp.next=head2;
+            head2=head2.next;
+            temp=temp.next;
+
+        }
+        return mergell.next;
+    }
+    public node mergesort(node head){
+        if(head==null||head.next==null){
+            return head;
+        }
+        // find mid
+        node mid=getmid(head);
+        //divide into left and right merge sort
+        node righthead=mid.next;
+        mid.next=null;
+        node newleft=mergesort(head);
+        node newright=mergesort(righthead);
+
+
+        //merge
+        return merge(newleft,newright);
+
+
+    }
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
-        ll.addfirst(1);
+    ll.addfirst(1);
+    ll.addfirst(4);
     ll.addfirst(2);
-    ll.addlast(1);
-    ll.addlast(2);
+    ll.addlast(3);
+    ll.addlast(4);
 
     ll.print();
+ll.head = ll.mergesort(ll.head);  // Assign the result back to head    
+ll.print();
 
-    // 🔥 Create a cycle: tail -> second node
-    ll.tail.next = ll.head.next;
-    ll.remove_cycle();
-    System.out.println("Cycle exists? " + ll.iscycle()); // Should print true
+    
+    
     }
 }
