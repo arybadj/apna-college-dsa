@@ -320,6 +320,39 @@ public class LinkedList {
 
 
     }
+    public void zigzag(){
+        // find mid that is fast half node
+        node mid=getmid(head);
+
+        // reverse 2nd half
+        node curr=mid.next;
+        mid.next=null;
+        node prev=null;
+        node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        node left=head;
+        node right=prev;
+        node nextl, nextr;
+
+        //alternate zigzag merging
+        while(left!=null && right!=null){
+            nextl=left.next;
+            left.next=right;
+            nextr=right.next;
+            right.next=nextl;
+
+            left=nextl;
+            right=nextr;
+        }
+
+    }
+
+
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
     ll.addfirst(1);
@@ -329,8 +362,9 @@ public class LinkedList {
     ll.addlast(4);
 
     ll.print();
-ll.head = ll.mergesort(ll.head);  // Assign the result back to head    
-ll.print();
+    ll.zigzag();
+    ll.print();
+
 
     
     
