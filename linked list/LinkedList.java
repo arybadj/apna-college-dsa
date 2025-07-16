@@ -167,12 +167,55 @@ public class LinkedList {
         return;
         
 
+    }
+// using slow fast approach
+    public node find_mid(node head){
+        node slow=head;
+        node fast=head;
 
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;//+1
+            fast=fast.next.next;//+2
+        }
+        return slow; // slow is my middle node
 
+    }
+    public boolean palindrone(){
+        if(head==null||head.next==null){
+            return true;
+        }
+        // find middle node step 1
+        node mid=find_mid(head);
+
+        // reverse the 2nd half of the ll
+        node prev=null;
+        node curr=mid;
+        node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        node left=head;
+        node right=prev;
+        // check if both are equal
+        while(right!=null){
+            if(left.data!=right.data){
+                return false;
+
+            }
+            left=left.next;
+            right=right.next;
+        }
+
+        return true;
 
 
 
     }
+
+
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         // ll.print();
@@ -180,18 +223,19 @@ public class LinkedList {
         // ll.print();
         ll.addfirst(2);
         // ll.print();
-        ll.addlast(5);
-        ll.addlast(55);
+        ll.addlast(1);
+        ll.addlast(2);
         // ll.print();
-        ll.adding_at(3, 10);
+        // ll.adding_at(3, 10);
         ll.print();
         // ll.find_size(); till will taking 0(n) tc
         // ll.remove_start();
         // ll.remove_end();
         // ll.print();
         // System.out.println(ll.search_iterative(55));
-        ll.reverse();
+        // ll.reverse();
+        
         ll.print();
-        System.out.println("the size of the linked list is : "+ll.size);// this is running in constant time 
+        System.out.println(ll.palindrone());// this is running in linear time 
     }
 }
