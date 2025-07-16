@@ -131,6 +131,21 @@ public class LinkedList {
         return -1;
     }
 
+
+    public void reverse(){
+        node prev=null;
+        node curr=tail=head;
+        node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+
+        }
+        head=prev;
+    }
+
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         // ll.print();
@@ -147,7 +162,9 @@ public class LinkedList {
         // ll.remove_start();
         // ll.remove_end();
         // ll.print();
-        System.out.println(ll.search_iterative(55));
+        // System.out.println(ll.search_iterative(55));
+        ll.reverse();
+        ll.print();
         System.out.println("the size of the linked list is : "+ll.size);// this is running in constant time 
     }
 }
