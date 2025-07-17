@@ -16,11 +16,11 @@ public class basic {
 
         System.out.println(list);
         // 2.get element
-        int elemnt=list.get(0);// we have given the index here
+        int elemnt=list.get(3);// we have given the index here
         System.out.println(elemnt);
 
         // // 3. remove an element
-        // list.remove(2);// we are removing the value at index 2
+        // list.remove(list.size());// we are removing the value at index 2
         // System.out.println(list);
 
         // 4. set new element at the new place
