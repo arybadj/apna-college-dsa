@@ -1,26 +1,92 @@
 import java.util.*;
 public class basics {
-// queue using array
+// queue using array for nomral array
+    // static class queue{
+    //     static int arr[];
+    //     static int size;
+    //     static int rear;
+
+    //     queue(int n){
+    //         arr=new int[n];
+    //         size=n;
+    //         rear=-1;
+    //     }
+    //     public static boolean isempty_arr(){
+    //         return rear==-1;
+    //     }
+    //     // add
+    //     public static void add_arr(int data){
+    //         if(rear==size-1){
+    //             System.out.println("queue is full");
+
+    //         }
+    //         rear=rear+1;
+    //         arr[rear]=data;
+    //     }
+    //     // remove 
+    //     public static int remove_arr(){
+    //         if(isempty_arr()){
+    //             return -1;
+    //         }
+    //         int front=arr[0];
+    //         for(int i=0;i<rear;i++){
+    //             arr[i]=arr[i+1];
+    //         }
+    //         rear--;
+    //         return front;
+    //     }
+    //     // peek
+    //     public static int peek_arr(){
+    //         if(isempty_arr()){
+    //             return -1;
+    //         }
+    //         int front=arr[0];
+    //         return front;
+
+    //     }
+    // }
+
+    // array creating circular queue
+    static class node{
+        int data;
+        node next;
+
+        node(int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
     static class queue{
         static int arr[];
         static int size;
         static int rear;
+        static int front;
 
         queue(int n){
             arr=new int[n];
             size=n;
             rear=-1;
+            front=-1;
         }
         public static boolean isempty_arr(){
-            return rear==-1;
+            return rear==-1 && front==-1;
+        }
+        //isfull circular queue using array
+        public static boolean isfull_cirx(){
+            return (rear+1)%size==front;
         }
         // add
         public static void add_arr(int data){
-            if(rear==size-1){
+            if(isfull_cirx()){
                 System.out.println("queue is full");
+                return;
 
             }
-            rear=rear+1;
+            //while adding first elemnt
+            if(front==-1){
+                front=0;
+            }
+            rear=(rear+1)%size;
             arr[rear]=data;
         }
         // remove 
@@ -28,23 +94,28 @@ public class basics {
             if(isempty_arr()){
                 return -1;
             }
-            int front=arr[0];
-            for(int i=0;i<rear;i++){
-                arr[i]=arr[i+1];
+            int result=arr[front];
+            
+
+            // fi we are deleting last elemnt
+            if(rear==front){
+                rear=front=-1;
+            }else{
+                front=(front+1)%size;
             }
-            rear--;
-            return front;
+            
+            
+            return result;
         }
         // peek
         public static int peek_arr(){
             if(isempty_arr()){
                 return -1;
             }
-            int front=arr[0];
-            return front;
+            // int front=arr[0];
+            return arr[front];
 
-        }
-    }
+        }}
     public static void main(String[] args) {
         queue q=new queue(3);
         q.add_arr(0);
