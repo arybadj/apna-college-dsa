@@ -26,6 +26,9 @@ public class hashset_dsa {
         while(it.hasNext()){
             System.out.println(it.next());
         }
-
+        // adv loop
+        for(String city:hs){
+            System.out.println(city);
+        }
     }
 }
