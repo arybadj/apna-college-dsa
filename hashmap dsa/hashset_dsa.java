@@ -18,6 +18,14 @@ public class hashset_dsa {
         // System.out.println(hs.remove(3));
         // System.out.println(hs);
         HashSet<String> hs=new HashSet<>();
-        
+        hs.add("jaipur");
+        hs.add("delhi");
+        hs.add("punjab");
+        hs.add("hiiiiii");
+        Iterator it=hs.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+
     }
 }
