@@ -115,6 +115,18 @@ public class binarytreeBnary {
         int r_sum=cal_sum(root.right);
         return l_sum+r_sum+root.data;
     }
+    public static int diameter(node root){
+        if(root==null){
+            return 0;
+        }
+        int left_dia=diameter(root.left);
+        int left_height=count(root.left);
+        int right_dia=diameter(root.right);
+        int right_height=count(root.right);
+        int self_dim=left_height+right_height+1;
+
+        return Math.max(self_dim, Math.max(right_dia,left_dia));
+    }
 
     public static void main(String[] args) {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
@@ -123,6 +135,7 @@ public class binarytreeBnary {
         node root=tree.Btree(nodes);
         binarytreeBnary.level_order(root);
         System.out.println("count of node: " + cal_sum(root));
+        System.out.println(diameter(root));
 
     }
 }
