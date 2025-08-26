@@ -144,7 +144,36 @@ public class binarytreeBnary {
         int height=Math.max(l_info.ht, r_info.ht)+1;
         return new info(dia, height);
     }
+    public static boolean isidentical(node root,node subroot){
+        if(root==null&&subroot==null){
+            return true;
+        }
+        else if(root==null||subroot==null||root.data!=subroot.data){
+            return false;
+        }
+        if(!isidentical(root.left, subroot.left)){
+            return false;
+        }
+        if(!isidentical(root.right, subroot.right)){
+            return false;
+        }
+        return true;
+    }
 
+    public static boolean issubtree(node root, node subroot){
+        if(root==null){
+            return false;
+        }
+        if(root.data==subroot.data){
+            if(isidentical(root,subroot)){
+                return true;
+            }
+        }
+        return issubtree(root.left, subroot)||issubtree(root.right, subroot);
+
+
+
+    }
     public static void main(String[] args) {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
 
