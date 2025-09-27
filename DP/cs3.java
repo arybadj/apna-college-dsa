@@ -15,8 +15,8 @@ public class cs3 {
         return ways[n];
     }
     public static void main(String[] args) {
-        int var[]=new int[4];
+        int var[]=new int[5];
         Arrays.fill(var,-1);
-        System.out.println(stair3(3, var));
+        System.out.println(stair3(4, var));
     }
 }
