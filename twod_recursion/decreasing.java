@@ -55,6 +55,20 @@ public class decreasing {
         }
         return locc(nums, i-1, ele);
     }
+    public static int locc1(int[] nums,int i,int ele){
+        
+        if(i==nums.length-1){
+            return -1;
+        }
+        int ind=locc(nums, i+1, ele);
+        if(ind!=-1){
+            return ind;
+        }
+        if(nums[i]==ele){
+            return i;
+        }
+        return -1;
+    }
     public static void main(String[] args) {
         // inc(5);
         // System.out.println(fact(1));
@@ -62,6 +76,6 @@ public class decreasing {
         int[] nums={2,5,6,8,11,11,8,2,2};
         // System.out.println(check(nums,0));
         // System.out.println(focc(nums, 0, 6));
-        System.out.println(locc(nums, nums.length-1, 5));
+        System.out.println(locc1(nums, 0, 5));
     }
 }
