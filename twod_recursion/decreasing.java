@@ -29,7 +29,7 @@ public class decreasing {
         return n;
     }
     public static boolean check(int[] nums,int i){
-        if(i==nums.length){
+        if(i==nums.length-1){
             return true;
         }
         if(nums[i]>nums[i+1]){
@@ -42,7 +42,7 @@ public class decreasing {
         // inc(5);
         // System.out.println(fact(1));
         // System.out.println(nsum(5));
-        int[] nums={2,5,6,8,1};
+        int[] nums={2,5,6,8,11};
         System.out.println(check(nums,0));
     }
 }
