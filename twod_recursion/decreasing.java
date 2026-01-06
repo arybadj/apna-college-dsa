@@ -69,6 +69,12 @@ public class decreasing {
         }
         return -1;
     }
+    public static double expo(int x,int n){
+        if(n==0){
+            return 1;
+        }
+        return x*Math.pow(x, n-1);
+    }
     public static void main(String[] args) {
         // inc(5);
         // System.out.println(fact(1));
@@ -76,6 +82,7 @@ public class decreasing {
         int[] nums={2,5,6,8,11,11,8,2,2};
         // System.out.println(check(nums,0));
         // System.out.println(focc(nums, 0, 6));
-        System.out.println(locc1(nums, 0, 5));
+        // System.out.println(locc1(nums, 0, 5));
+        System.out.println(expo(2, 4));
     }
 }
